@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.hakaton_271023.R
 import com.example.hakaton_271023.databinding.FragmentAdminStudyMaterialsAddBinding
+import com.example.hakaton_271023.domain.model.StudyMaterialsModel
 
 class AdminStudyMaterialsAddFragment : Fragment() {
 
@@ -19,9 +20,17 @@ class AdminStudyMaterialsAddFragment : Fragment() {
         binding = FragmentAdminStudyMaterialsAddBinding.inflate(layoutInflater)
 
         binding.save.setOnClickListener{
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.admin_home_fragment_container, AdminStudyMaterialsFillsFragment())
-                .commit()
+
+            if (binding.name.text?.isEmpty() == false && binding.description.text?.isEmpty() == false && binding.link.text?.isEmpty() == false){
+
+                val studyMaterialsModel = StudyMaterialsModel(binding.name.text.toString(), binding.description.text.toString(), binding.link.text.toString())
+                
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.admin_home_fragment_container, AdminStudyMaterialsFillsFragment())
+                    .commit()
+            }
+
+
         }
 
         return binding.root

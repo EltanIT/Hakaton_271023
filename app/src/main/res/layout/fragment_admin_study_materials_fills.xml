@@ -59,11 +59,13 @@
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:id="@+id/rv_study_mat"
         app:layout_constraintTop_toBottomOf="@id/btn_group"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="32dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingBottom="16dp"
         />
 
 
