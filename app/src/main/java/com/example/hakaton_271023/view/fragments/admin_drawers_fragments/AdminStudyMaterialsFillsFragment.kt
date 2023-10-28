@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import com.example.hakaton_271023.R
 import com.example.hakaton_271023.databinding.FragmentAdminStudyMaterialsFillsBinding
 import com.example.hakaton_271023.domain.model.StudyMaterialsModel
-import com.example.hakaton_271023.view.adapter.StudyMaterialsAdapter
-import com.example.hakaton_271023.view.fragments.AdminHomeFragment
+import com.example.hakaton_271023.view.adapter.AdminStudyMaterialsAdapter
 
 class AdminStudyMaterialsFillsFragment : Fragment() {
 
 private lateinit var binding: FragmentAdminStudyMaterialsFillsBinding
-    private var studyMaterialsAdapter: StudyMaterialsAdapter? = null
+    private var studyMaterialsAdapter: AdminStudyMaterialsAdapter? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +43,6 @@ private lateinit var binding: FragmentAdminStudyMaterialsFillsBinding
                 .commit()
 
         }
-        binding.rvStudyMat.adapter = StudyMaterialsAdapter(list)
+        binding.rvStudyMat.adapter = AdminStudyMaterialsAdapter(list)
     }
 }

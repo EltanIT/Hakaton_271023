@@ -32,6 +32,7 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun setting() {
         binding.password.setOnTouchListener(OnTouchListener { view, motionEvent ->
             val DRAWABLE_RIGHT = 2
@@ -65,6 +66,7 @@ class LoginFragment : Fragment() {
         binding.signup.setOnClickListener(View.OnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.main_fragment_container, SignUpFragment(), "signUp")
+                .addToBackStack("singup")
                 .commit()
         })
 

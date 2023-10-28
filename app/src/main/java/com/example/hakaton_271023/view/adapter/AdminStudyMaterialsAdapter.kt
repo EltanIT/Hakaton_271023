@@ -8,7 +8,7 @@ import com.example.hakaton_271023.R
 import com.example.hakaton_271023.databinding.ViewAdminStudyMaterialsBinding
 import com.example.hakaton_271023.domain.model.StudyMaterialsModel
 
-class StudyMaterialsAdapter(_studyMaterialsList: List<StudyMaterialsModel>): RecyclerView.Adapter<StudyMaterialsAdapter.ViewHolder>() {
+class AdminStudyMaterialsAdapter(_studyMaterialsList: List<StudyMaterialsModel>): RecyclerView.Adapter<AdminStudyMaterialsAdapter.ViewHolder>() {
 
     private val studyMaterialList = _studyMaterialsList
 

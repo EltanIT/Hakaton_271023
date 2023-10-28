@@ -101,7 +101,7 @@ class SignUpFragment : Fragment() {
 
         binding.login.setOnClickListener{
             requireActivity().supportFragmentManager.beginTransaction()
-                .add(R.id.main_fragment_container, LoginFragment(), "login")
+                .replace(R.id.main_fragment_container, LoginFragment(), "login")
                 .commit()
         }
 

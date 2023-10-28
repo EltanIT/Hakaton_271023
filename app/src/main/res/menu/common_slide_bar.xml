@@ -2,32 +2,32 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/our_company"
+            android:id="@+id/our_company_common"
             android:title="Наша компания"
             android:icon="@drawable/our_company_ic"
             />
         <item
-            android:id="@+id/my_study"
+            android:id="@+id/my_study_common"
             android:title="Мое обучение"
             android:icon="@drawable/my_study_ic"
             />
         <item
-            android:id="@+id/my_tests"
+            android:id="@+id/my_tests_common"
             android:title="Мои тесты"
             android:icon="@drawable/base_tests_ic"
             />
         <item
-            android:id="@+id/my_results"
+            android:id="@+id/my_results_common"
             android:title="Мои результаты"
             android:icon="@drawable/my_results_ic"
             />
         <item
-            android:id="@+id/my_appeals"
+            android:id="@+id/my_appeals_common"
             android:title="Мои обращения"
             android:icon="@drawable/support_ic"
             />
         <item
-            android:id="@+id/my_requests"
+            android:id="@+id/my_requests_common"
             android:title="Мои заявки"
             android:icon="@drawable/requests_ic"
             />
