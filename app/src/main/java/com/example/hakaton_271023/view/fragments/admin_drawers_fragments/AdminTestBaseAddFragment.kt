@@ -37,6 +37,10 @@ class AdminTestBaseAddFragment : Fragment() {
         adapter = TestBaseAdapter(list)
 
         binding.rvTests.adapter = adapter
+
+        binding.add.setOnClickListener{
+            adapter.addItem(TestModel())
+        }
     }
 
 }

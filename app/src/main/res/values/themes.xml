@@ -5,6 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
         <item name="drawerLayoutStyle">@style/DrawerNavigationViewStyle</item>
+        <item name="android:navigationBarColor"></item>
     </style>
 
     <style name="Theme.Hakaton_271023" parent="Base.Theme.Hakaton_271023" />
@@ -18,5 +19,6 @@
     <style name="DrawerNavigationViewStyle" parent="Widget.Material3.DrawerLayout">
         <item name="itemIconTint">@drawable/bottom_nav_color_icon_selector</item>
         <item name="titleTextColor">@drawable/bottom_nav_color_icon_selector</item>
+        <item name="itemBackground">@color/Primary_200</item>
     </style>
 </resources>

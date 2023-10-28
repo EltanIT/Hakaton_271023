@@ -1,20 +1,22 @@
 package com.example.hakaton_271023.view.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hakaton_271023.R
 import com.example.hakaton_271023.databinding.ViewStudyMaterialsBinding
+import com.example.hakaton_271023.databinding.ViewTestBaseBinding
 import com.example.hakaton_271023.domain.model.StudyMaterialsModel
 import com.example.hakaton_271023.domain.model.TestModel
 
-class TestBaseAdapter(_testsList: List<TestModel>): RecyclerView.Adapter<TestBaseAdapter.ViewHolder>() {
+class TestBaseAdapter(_testsList: ArrayList<TestModel>): RecyclerView.Adapter<TestBaseAdapter.ViewHolder>() {
 
     private val testsList = _testsList
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val binding = ViewStudyMaterialsBinding.bind(itemView)
+        val binding = ViewTestBaseBinding.bind(itemView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,7 +28,15 @@ class TestBaseAdapter(_testsList: List<TestModel>): RecyclerView.Adapter<TestBas
         return testsList.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun addItem(testModel: TestModel){
+        testsList.add(testModel)
+        notifyDataSetChanged()
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val studyMaterialsModel = testsList.get(position)
+        val studyMaterialsModel = testsList[position]
+
+        holder.binding.numQ.text = "Вопрос ${position+1}"
     }
 }

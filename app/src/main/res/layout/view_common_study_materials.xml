@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="16dp"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="86dp"
+                android:layout_height="81dp"
+                app:cardCornerRadius="12dp"
+                android:layout_gravity="top"
+                android:backgroundTint="@color/Neutral_100"
+                >
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                >
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Lorem ipsum dolor sit amet, consec adipiscing elit"
+                    android:maxLines="3"
+                    android:fontFamily="@font/sf_protext_semibold"
+                    android:textSize="16sp"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/Neutral_800"
+                    />
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Lorem ipsum dolor sit amet"
+                    android:layout_marginTop="12dp"
+                    android:maxLines="2"
+
+                    android:fontFamily="@font/sf_protext_regular"
+                    android:textSize="14sp"
+                    android:lineHeight="20dp"
+                    android:textColor="#666687"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|right"
+            >
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/show_more"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Больше"
+                android:background="@drawable/filter_btn_style"
+                android:textColor="@color/Neutral_800"
+                android:drawableLeft="@drawable/link_ic"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="28dp"
+                android:textAllCaps="false"
+                android:layout_marginBottom="4dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:fontFamily="@font/sf_protext_bold"
+                android:textSize="14sp"
+                android:lineHeight="16dp"
+                android:layout_marginStart="16dp"
+                android:drawablePadding="8dp"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

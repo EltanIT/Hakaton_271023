@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/Neutral_0"
     android:scrollbars="none"
+    android:overScrollMode="never"
     tools:context=".view.fragments.admin_drawers_fragments.AdminTestBaseAddFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -92,6 +93,7 @@
                 android:id="@+id/rv_tests"
                 android:layout_marginTop="32dp"
                 android:scrollbars="none"
+                android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 />
             <LinearLayout

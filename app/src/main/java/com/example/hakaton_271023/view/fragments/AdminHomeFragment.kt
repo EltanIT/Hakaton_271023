@@ -3,6 +3,8 @@ package com.example.hakaton_271023.view.fragments
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
@@ -110,6 +112,18 @@ class AdminHomeFragment : Fragment() {
 //            .add(R.id.admin_home_fragment_container, adminOurCompanyFragment, "ourCompany").hide(adminOurCompanyFragment)
 //            .commit()
 //    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        requireActivity().menuInflater.inflate(R.menu.toolbar_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.open_drawer){
+                binding.adminDrawer.openDrawer(GravityCompat.START)
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     fun selectFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.beginTransaction().replace(R.id.admin_home_fragment_container, fragment)
