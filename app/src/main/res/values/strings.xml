@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hakaton_271023</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="open_admin_slide_bar_txt">open</string>
+    <string name="close_admin_slide_bar_txt">close</string>
+</resources>

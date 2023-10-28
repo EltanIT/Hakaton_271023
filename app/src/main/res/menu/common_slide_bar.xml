@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/our_company"
+            android:title="Наша компания"
+            android:icon="@drawable/our_company_ic"
+            />
+        <item
+            android:id="@+id/my_study"
+            android:title="Мое обучение"
+            android:icon="@drawable/my_study_ic"
+            />
+        <item
+            android:id="@+id/my_tests"
+            android:title="Мои тесты"
+            android:icon="@drawable/base_tests_ic"
+            />
+        <item
+            android:id="@+id/my_results"
+            android:title="Мои результаты"
+            android:icon="@drawable/my_results_ic"
+            />
+        <item
+            android:id="@+id/my_appeals"
+            android:title="Мои обращения"
+            android:icon="@drawable/support_ic"
+            />
+        <item
+            android:id="@+id/my_requests"
+            android:title="Мои заявки"
+            android:icon="@drawable/requests_ic"
+            />
+    </group>
+
+</menu>
