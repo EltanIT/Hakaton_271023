@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.fragments.admin_drawers_fragments.AdminStudyMaterialFragment">
+    tools:context=".view.fragments.admin_drawers_fragments.AdminTestBaseEmptyFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -31,7 +31,6 @@
             />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/add_btn"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:drawableLeft="@drawable/add_ic"
@@ -45,9 +44,7 @@
             android:lineHeight="16dp"
             android:textColor="@color/Primary_700"
             android:layout_marginTop="16dp"
-            style="?android:attr/borderlessButtonStyle"
             />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

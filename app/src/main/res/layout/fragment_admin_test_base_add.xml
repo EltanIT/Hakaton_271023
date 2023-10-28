@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Neutral_0"
+    tools:context=".view.fragments.admin_drawers_fragments.AdminTestBaseAddFragment">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавление теста"
+        android:fontFamily="@font/sf_protext_bold"
+        android:textSize="20sp"
+        android:textColor="@color/Neutral_800"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/txt1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Название"
+                android:fontFamily="@font/sf_protext_semibold"
+                android:textSize="14sp"
+                android:lineHeight="20dp"
+                android:textColor="@color/Neutral_800"
+                />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_style"
+                android:layout_marginTop="12dp"
+                android:padding="16dp"
+                android:hint="Заполните поле"
+                android:textColorHint="@color/Neutral_500"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Модуль"
+                android:fontFamily="@font/sf_protext_semibold"
+                android:textSize="14sp"
+                android:lineHeight="20dp"
+
+                android:textColor="@color/Neutral_800"
+                />
+            <Spinner
+                android:id="@+id/module_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/et_style"
+                android:layout_marginTop="12dp"
+                />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_tests"
+            android:layout_marginTop="32dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1.3"
+            android:gravity="center"
+            android:layout_marginTop="42dp"
+            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/primary_button_style"
+                android:layout_weight="1"
+                android:text="Добавить вопрос"
+                android:textColor="@color/Neutral_0"
+                style="?android:attr/borderlessButtonStyle"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,17 +6,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginHorizontal="16dp">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:padding="16dp"
+
             >
             <androidx.cardview.widget.CardView
                 android:layout_width="86dp"
                 android:layout_height="81dp"
                 app:cardCornerRadius="12dp"
                 android:layout_gravity="top"
+                android:backgroundTint="@color/Neutral_100"
                 >
                 <ImageView
                     android:layout_width="match_parent"
@@ -55,5 +62,50 @@
                     />
 
             </LinearLayout>
+
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|right"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Удалить"
+                android:background="@drawable/exit_btn_style"
+                android:textColor="@color/Danger_500"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="28dp"
+                android:textAllCaps="false"
+                android:layout_marginBottom="4dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:fontFamily="@font/sf_protext_bold"
+                android:textSize="14sp"
+                android:lineHeight="16dp"
+
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Изменить"
+                android:background="@drawable/secondary_button_style"
+                android:textColor="@color/Primary_600"
+                android:drawableLeft="@drawable/pencil"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="28dp"
+                android:textAllCaps="false"
+                android:layout_marginBottom="4dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:fontFamily="@font/sf_protext_bold"
+                android:textSize="14sp"
+                android:lineHeight="16dp"
+                android:layout_marginStart="16dp"
+                android:drawablePadding="8dp"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.cardview.widget.CardView>

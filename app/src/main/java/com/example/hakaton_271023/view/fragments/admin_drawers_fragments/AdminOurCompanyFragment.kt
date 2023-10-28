@@ -10,10 +10,6 @@ import com.example.hakaton_271023.databinding.FragmentAdminHomeBinding
 import com.example.hakaton_271023.databinding.FragmentAdminOurCompanyBinding
 import com.example.hakaton_271023.view.activities.AdminProfileSlideBarActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 class AdminOurCompanyFragment : Fragment() {
 

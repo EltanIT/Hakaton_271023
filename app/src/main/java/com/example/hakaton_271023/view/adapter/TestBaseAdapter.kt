@@ -7,28 +7,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hakaton_271023.R
 import com.example.hakaton_271023.databinding.ViewStudyMaterialsBinding
 import com.example.hakaton_271023.domain.model.StudyMaterialsModel
+import com.example.hakaton_271023.domain.model.TestModel
 
-class StudyMaterialsAdapter(_studyMaterialsList: List<StudyMaterialsModel>): RecyclerView.Adapter<StudyMaterialsAdapter.ViewHolder>() {
+class TestBaseAdapter(_testsList: List<TestModel>): RecyclerView.Adapter<TestBaseAdapter.ViewHolder>() {
 
-    private val studyMaterialList = _studyMaterialsList
+    private val testsList = _testsList
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = ViewStudyMaterialsBinding.bind(itemView)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_study_materials, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_test_base, parent, false)
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return studyMaterialList.size
+        return testsList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val studyMaterialsModel = studyMaterialList.get(position)
-
-
+        val studyMaterialsModel = testsList.get(position)
     }
 }

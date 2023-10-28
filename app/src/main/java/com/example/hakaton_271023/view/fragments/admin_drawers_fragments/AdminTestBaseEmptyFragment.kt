@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.hakaton_271023.R
-
-class AdminMyApplicationFragment : Fragment() {
+class AdminTestBaseEmptyFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_admin_my_application, container, false)
+
+        return inflater.inflate(R.layout.fragment_admin_test_base_empty, container, false)
     }
-
-
 }

@@ -2,27 +2,23 @@ package com.example.hakaton_271023.view.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.text.TextWatcher
-import android.text.method.PasswordTransformationMethod
-import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.MotionEvent
 import android.view.View
-import android.view.View.OnTouchListener
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.widget.addTextChangedListener
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.hakaton_271023.R
 import com.example.hakaton_271023.databinding.FragmentAdminHomeBinding
-import com.example.hakaton_271023.databinding.FragmentLoginBinding
 import com.example.hakaton_271023.view.activities.AdminProfileSlideBarActivity
 import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminMyApplicationFragment
 import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminOurCompanyFragment
 import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminStudyMaterialFragment
-import com.google.android.material.navigation.NavigationBarView
+import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminStudyMaterialsAddFragment
+import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminStudyMaterialsFillsFragment
+import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminTestBaseEmptyFragment
+import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminTestBaseFillsFragment
 import com.google.android.material.navigation.NavigationView
 
 
@@ -32,7 +28,8 @@ class AdminHomeFragment : Fragment() {
 
     private val adminOurCompanyFragment: Fragment = AdminOurCompanyFragment()
     private val adminMyApplicationFragment: Fragment = AdminMyApplicationFragment()
-    private val adminStudyMaterialFragment: Fragment = AdminStudyMaterialFragment()
+    private val adminStudyMaterialFillsFragment: Fragment = AdminStudyMaterialsFillsFragment()
+    private val adminTestBaseFillsFragment: Fragment = AdminTestBaseFillsFragment()
 
     private var activeFragment = adminOurCompanyFragment
 
@@ -42,10 +39,10 @@ class AdminHomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentAdminHomeBinding.inflate(layoutInflater)
-        setting()
-        settingFragments()
-        selectFragment(adminOurCompanyFragment)
         settingDrawer()
+        setting()
+//        settingFragments()
+        selectFragment(adminOurCompanyFragment)
         return binding.root
     }
 
@@ -57,16 +54,25 @@ class AdminHomeFragment : Fragment() {
                     R.id.our_company ->{
                         selectFragment(adminOurCompanyFragment)
                         activeFragment = adminOurCompanyFragment
+                        closeDrawerView()
                         return true
                     }
                     R.id.my_requests ->{
                         selectFragment(adminMyApplicationFragment)
                         activeFragment = adminMyApplicationFragment
+                        closeDrawerView()
                         return true
                     }
-                    R.id.my_study ->{
-                        selectFragment(adminStudyMaterialFragment)
-                        activeFragment = adminStudyMaterialFragment
+                    R.id.base_material ->{
+                        selectFragment(adminStudyMaterialFillsFragment)
+                        activeFragment = adminStudyMaterialFillsFragment
+                        closeDrawerView()
+                        return true
+                    }
+                    R.id.base_tests ->{
+                        selectFragment(adminTestBaseFillsFragment)
+                        activeFragment = adminTestBaseFillsFragment
+                        closeDrawerView()
                         return true
                     }
                 }
@@ -74,26 +80,40 @@ class AdminHomeFragment : Fragment() {
             }
 
         })
+
+    }
+
+    fun closeDrawerView(){
+        if (binding.adminDrawer.isDrawerOpen(GravityCompat.START)) {
+            binding.adminDrawer.closeDrawer(GravityCompat.START)
+        }
     }
 
     fun settingDrawer(){
         (activity as AdminProfileSlideBarActivity).setSupportActionBar(binding.toolbar)
         val toggle = ActionBarDrawerToggle(requireActivity(),binding.adminDrawer,binding.toolbar,R.string.open_admin_slide_bar_txt,R.string.close_admin_slide_bar_txt)
         binding.adminDrawer.addDrawerListener(toggle)
+        binding.adminDrawer.bringToFront()
+        binding.adminDrawer.requestLayout()
         toggle.syncState()
     }
 
-    private fun settingFragments() {
-        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaction
-            .add(R.id.admin_home_fragment_container, adminMyApplicationFragment, "myApplication").hide(adminMyApplicationFragment)
-            .add(R.id.admin_home_fragment_container, adminStudyMaterialFragment, "studyMaterial").hide(adminStudyMaterialFragment)
-            .add(R.id.admin_home_fragment_container, adminOurCompanyFragment, "ourCompany").hide(adminOurCompanyFragment)
-            .commit()
-    }
+//    private fun settingFragments() {
+//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+//        transaction
+//            .add(R.id.admin_home_fragment_container, adminMyApplicationFragment, "myApplication").hide(adminMyApplicationFragment)
+//            .add(R.id.admin_home_fragment_container, adminTestBaseEmptyFragment, "testBaseEmpty").hide(adminTestBaseEmptyFragment)
+//            .add(R.id.admin_home_fragment_container, adminTestBaseFillsFragment, "testBaseFills").hide(adminTestBaseFillsFragment)
+//            .add(R.id.admin_home_fragment_container, adminStudyMaterialFragment, "studyMaterial").hide(adminStudyMaterialFragment)
+//            .add(R.id.admin_home_fragment_container, adminStudyMaterialFillsFragment, "studyMaterialFills").hide(adminStudyMaterialFillsFragment)
+//            .add(R.id.admin_home_fragment_container, adminStudyMaterialAddFragment, "studyMaterialAdd").hide(adminStudyMaterialAddFragment)
+//            .add(R.id.admin_home_fragment_container, adminOurCompanyFragment, "ourCompany").hide(adminOurCompanyFragment)
+//            .commit()
+//    }
 
-    private fun selectFragment(fragment: Fragment) {
-        requireActivity().supportFragmentManager.beginTransaction().hide(activeFragment).show(fragment).commit()
+    fun selectFragment(fragment: Fragment) {
+        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.admin_home_fragment_container, fragment)
+            .commit()
     }
 
 

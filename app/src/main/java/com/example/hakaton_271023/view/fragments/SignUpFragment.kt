@@ -99,6 +99,12 @@ class SignUpFragment : Fragment() {
             binding.address.isActivated = it?.toString()?.isEmpty() == false
         }
 
+        binding.login.setOnClickListener{
+            requireActivity().supportFragmentManager.beginTransaction()
+                .add(R.id.main_fragment_container, LoginFragment(), "login")
+                .commit()
+        }
+
 
     }
 

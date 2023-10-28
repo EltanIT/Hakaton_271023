@@ -34,7 +34,8 @@
             android:layout_gravity="top|end"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/pencil"
+            android:src="@drawable/pencil_white"
+
             />
 <!--        <androidx.appcompat.widget.Toolbar-->
 <!--            android:id="@+id/toolbar"-->
@@ -266,7 +267,6 @@
         app:layout_anchorGravity="bottom"
         android:layout_marginStart="32dp"
         android:backgroundTint="@color/Neutral_100"
-        android:src="@drawable/avatar_ic"
         app:fabSize="normal"
         />
 
