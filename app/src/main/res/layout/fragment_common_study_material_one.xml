@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Neutral_0"
+    tools:context=".view.fragments.admin_drawers_fragments.AdminStudyMaterialsFillsFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="16dp"
+        >
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Тестирование"
+            android:fontFamily="@font/sf_protext_bold"
+            android:textSize="20sp"
+            android:textColor="@color/Primary_700"
+
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_study_mat"
+            app:layout_constraintTop_toBottomOf="@id/btn_group"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="32dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:paddingBottom="16dp"
+            android:overScrollMode="never"
+            tools:listitem="@layout/view_common_study_materials_one"
+            tools:itemCount="4"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|right"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Удалить"
+                android:background="@drawable/exit_btn_style"
+                android:textColor="@color/Danger_500"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="28dp"
+                android:textAllCaps="false"
+                android:layout_marginBottom="4dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:fontFamily="@font/sf_protext_bold"
+                android:textSize="14sp"
+                android:lineHeight="16dp"
+
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Изменить"
+                android:background="@drawable/secondary_button_style"
+                android:textColor="@color/Primary_600"
+                android:drawableLeft="@drawable/pencil"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="28dp"
+                android:textAllCaps="false"
+                android:layout_marginBottom="4dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:fontFamily="@font/sf_protext_bold"
+                android:textSize="14sp"
+                android:lineHeight="16dp"
+                android:layout_marginStart="16dp"
+                android:drawablePadding="8dp"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

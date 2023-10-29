@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Neutral_0"
+    tools:context=".view.fragments.common_drawers_fragmnets.CommonStudyMaterialPassTestFragment">
+
+
+    <LinearLayout
+        android:id="@+id/txt_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="16dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Название теста"
+                android:fontFamily="@font/sf_protext_bold"
+                android:textSize="12sp"
+                android:lineHeight="16dp"
+                android:textColor="@color/Neutral_800"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Name ifdsfsdfdsfasdi"
+                android:maxLines="1"
+                android:fontFamily="@font/sf_protext_medium"
+                android:textSize="16sp"
+                android:lineHeight="16dp"
+                android:textColor="@color/Neutral_800"
+                android:layout_marginTop="8dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Модуль"
+                android:fontFamily="@font/sf_protext_bold"
+                android:textSize="12sp"
+                android:lineHeight="16dp"
+                android:textColor="@color/Neutral_800"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Name iii"
+                android:fontFamily="@font/sf_protext_medium"
+                android:textSize="16sp"
+                android:lineHeight="16dp"
+                android:textColor="@color/Neutral_800"
+                android:layout_marginTop="8dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/txt_group"
+        android:layout_marginTop="32dp"
+        tools:listitem="@layout/view_common_pass_test"
+        tools:itemCount="3"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:nestedScrollingEnabled="false"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

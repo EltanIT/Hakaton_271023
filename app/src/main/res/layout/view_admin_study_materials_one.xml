@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="16dp"
+    android:background="@drawable/study_materials_one_view_style"
+    android:paddingHorizontal="16dp"
+    android:gravity="center"
+    android:paddingVertical="22dp"
+    >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Samiy luchshiy test"
+                    android:maxLines="1"
+                    android:fontFamily="@font/sf_protext_semibold"
+                    android:textSize="16sp"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/Neutral_800"
+                    />
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Lorem ipsum dolor sit amet"
+                    android:layout_marginTop="4dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/sf_protext_regular"
+                    android:textSize="14sp"
+                    android:lineHeight="20dp"
+                    android:textColor="#666687"
+                    />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|end"
+            >
+            <ImageView
+                android:id="@+id/redact_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pencil_grey"
+                />
+            <ImageView
+                android:id="@+id/delete_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/delete_ic"
+                android:layout_marginStart="32dp"
+                />
+        </LinearLayout>
+
+</LinearLayout>
