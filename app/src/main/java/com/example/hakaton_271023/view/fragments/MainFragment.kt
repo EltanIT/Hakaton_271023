@@ -11,10 +11,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import com.example.hakaton_271023.databinding.FragmentMainBinding
 import com.example.hakaton_271023.domain.model.LoginUserModel
-import com.example.hakaton_271023.domain.model.RegistrationUserModel
 import com.example.hakaton_271023.domain.usecase.InputFileUseCase
 import com.example.hakaton_271023.domain.usecase.LoginUserUseCase
-import com.example.hakaton_271023.domain.usecase.RegistrationUserUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,7 +22,7 @@ import java.io.File
 class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     private val inputFileUseCase = InputFileUseCase()
-    private val registrationUserUseCase = RegistrationUserUseCase()
+//    private val registrationUserUseCase = RegistrationUserUseCase()
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 //    pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
     override fun onCreateView(
@@ -47,9 +45,9 @@ class MainFragment : Fragment() {
 
     override fun onResume() {
         coroutineScope.launch {
-            val result = registrationUserUseCase.execute(RegistrationUserModel())
+//            val result = registrationUserUseCase.execute(RegistrationUserModel())
             withContext(Dispatchers.Main){
-                Toast.makeText(context, result.toString(), Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context, result.toString(), Toast.LENGTH_SHORT).show()
             }
         }
         super.onResume()
@@ -59,19 +57,19 @@ class MainFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun login(){
         coroutineScope.launch {
-            val loginUserUseCase = LoginUserUseCase()
-            val result = loginUserUseCase.execute(loginUserModel = LoginUserModel("lolka@gmail.com", "123456"))
-            withContext(Dispatchers.Main){
-                Toast.makeText(context, "$result", Toast.LENGTH_SHORT).show()
-            }
+//            val loginUserUseCase = LoginUserUseCase()
+//            val result = loginUserUseCase.execute(loginUserModel = LoginUserModel("lolka@gmail.com", "123456"))
+//            withContext(Dispatchers.Main){
+//                Toast.makeText(context, "$result", Toast.LENGTH_SHORT).show()
+//            }
         }
     }
 
     fun reg(){
         coroutineScope.launch {
-            val result = registrationUserUseCase.execute(RegistrationUserModel())
+//            val result = registrationUserUseCase.execute(RegistrationUserModel())
             withContext(Dispatchers.Main){
-                Toast.makeText(context, "$result", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context, "$result", Toast.LENGTH_SHORT).show()
             }
         }
     }

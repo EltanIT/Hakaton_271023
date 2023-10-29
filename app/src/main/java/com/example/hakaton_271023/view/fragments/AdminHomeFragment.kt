@@ -14,8 +14,11 @@ import androidx.fragment.app.Fragment
 import com.example.hakaton_271023.R
 import com.example.hakaton_271023.databinding.FragmentAdminHomeBinding
 import com.example.hakaton_271023.view.activities.AdminProfileSlideBarActivity
+import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminAnalyticsFragment
+import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminEmployeeBaseEmptyFragment
 import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminMyApplicationFragment
 import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminOurCompanyFragment
+import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminSettingsFragment
 import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminStudyMaterialFragment
 import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminStudyMaterialsAddFragment
 import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminStudyMaterialsFillsFragment
@@ -32,6 +35,10 @@ class AdminHomeFragment : Fragment() {
     private val adminMyApplicationFragment: Fragment = AdminMyApplicationFragment()
     private val adminStudyMaterialFillsFragment: Fragment = AdminStudyMaterialsFillsFragment()
     private val adminTestBaseFillsFragment: Fragment = AdminTestBaseFillsFragment()
+    private val adminEmployeeBaseEmptyFragment: Fragment = AdminEmployeeBaseEmptyFragment()
+    private val adminSettingsFragment: Fragment = AdminSettingsFragment()
+    private val adminAnalyticsFragment: Fragment = AdminAnalyticsFragment()
+    private val structureFragment: Fragment = StructureFragment()
 
     private var activeFragment = adminOurCompanyFragment
 
@@ -55,25 +62,41 @@ class AdminHomeFragment : Fragment() {
                 when(item.itemId){
                     R.id.our_company ->{
                         selectFragment(adminOurCompanyFragment)
-                        activeFragment = adminOurCompanyFragment
+                        closeDrawerView()
+                        return true
+                    }
+                    R.id.structure_admin ->{
+                        selectFragment(structureFragment)
                         closeDrawerView()
                         return true
                     }
                     R.id.my_requests ->{
                         selectFragment(adminMyApplicationFragment)
-                        activeFragment = adminMyApplicationFragment
                         closeDrawerView()
                         return true
                     }
                     R.id.base_material ->{
                         selectFragment(adminStudyMaterialFillsFragment)
-                        activeFragment = adminStudyMaterialFillsFragment
                         closeDrawerView()
                         return true
                     }
                     R.id.base_tests ->{
                         selectFragment(adminTestBaseFillsFragment)
-                        activeFragment = adminTestBaseFillsFragment
+                        closeDrawerView()
+                        return true
+                    }
+                    R.id.base_employee ->{
+                        selectFragment(adminEmployeeBaseEmptyFragment)
+                        closeDrawerView()
+                        return true
+                    }
+                    R.id.analytics ->{
+                        selectFragment(adminAnalyticsFragment)
+                        closeDrawerView()
+                        return true
+                    }
+                    R.id.setting ->{
+                        selectFragment(adminSettingsFragment)
                         closeDrawerView()
                         return true
                     }
@@ -82,6 +105,8 @@ class AdminHomeFragment : Fragment() {
             }
 
         })
+
+
 
     }
 
@@ -93,6 +118,10 @@ class AdminHomeFragment : Fragment() {
 
     fun settingDrawer(){
         (activity as AdminProfileSlideBarActivity).setSupportActionBar(binding.toolbar)
+        (activity as AdminProfileSlideBarActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        (activity as AdminProfileSlideBarActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
+        binding.toolbar.setNavigationIcon(R.drawable.drawer_tb_ic)
+
         val toggle = ActionBarDrawerToggle(requireActivity(),binding.adminDrawer,binding.toolbar,R.string.open_admin_slide_bar_txt,R.string.close_admin_slide_bar_txt)
         binding.adminDrawer.addDrawerListener(toggle)
         binding.adminDrawer.bringToFront()
@@ -126,7 +155,8 @@ class AdminHomeFragment : Fragment() {
     }
 
     fun selectFragment(fragment: Fragment) {
-        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.admin_home_fragment_container, fragment)
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.admin_home_fragment_container, fragment)
             .commit()
     }
 

@@ -8,14 +8,14 @@ import java.io.IOException
 
 class GetProfileDBRepositoryImpl{
 
-    private val url = URLs().loginUserURL
+    private val url = URLs().getProfileURL
     fun request(token: String): String?{
 
         val client = OkHttpClient()
 
         val request = Request.Builder().url(url)
             .get()
-            .header("Authorization", token)
+            .header("authorization", token)
             .build()
 
         try{

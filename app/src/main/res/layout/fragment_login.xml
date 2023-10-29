@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/password_style"
             android:layout_marginTop="16dp"
-            android:drawableRight="@drawable/eye_ic"
+            android:drawableRight="@drawable/eye_slash_ic"
             android:padding="16dp"
             android:password="true"
             android:hint="Пароль"

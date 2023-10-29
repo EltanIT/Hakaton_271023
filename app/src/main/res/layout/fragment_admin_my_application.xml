@@ -3,13 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.fragments.admin_drawers_fragments.AdminMyApplicationFragment"
-    android:background="@color/Neutral_0"
-    >
+    android:background="@color/Neutral_0">
 
     <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мои заявки"
+        android:fontFamily="@font/sf_protext_bold"
+        android:textSize="20sp"
+        android:textColor="@color/Primary_700"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_request"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Здесь ничего нет" />
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txt1"
+        tools:listitem="@layout/view_admin_request"
+        tools:itemCount="4"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

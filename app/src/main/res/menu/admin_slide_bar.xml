@@ -7,6 +7,11 @@
             android:icon="@drawable/our_company_ic"
             />
         <item
+            android:id="@+id/structure_admin"
+            android:title="Наша компания"
+            android:icon="@drawable/structure_ic"
+            />
+        <item
             android:id="@+id/my_requests"
             android:icon="@drawable/requests_ic"
             android:title="Мои заявки"
@@ -27,14 +32,9 @@
             android:icon="@drawable/base_employees"
             />
         <item
-            android:id="@+id/analitics"
+            android:id="@+id/analytics"
             android:title="Аналитика"
             android:icon="@drawable/analitics_ic"
-            />
-        <item
-            android:id="@+id/support"
-            android:title="Помощь"
-            android:icon="@drawable/support_ic"
             />
         <item
             android:id="@+id/setting"

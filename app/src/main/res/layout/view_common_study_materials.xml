@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="16dp"
+    app:cardElevation="1dp"
     >
 
     <LinearLayout
@@ -18,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-
+            android:padding="1dp"
             >
             <androidx.cardview.widget.CardView
                 android:layout_width="86dp"
@@ -26,6 +27,7 @@
                 app:cardCornerRadius="12dp"
                 android:layout_gravity="top"
                 android:backgroundTint="@color/Neutral_100"
+                app:cardElevation="0dp"
                 >
                 <ImageView
                     android:id="@+id/image"

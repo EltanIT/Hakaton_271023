@@ -14,6 +14,7 @@
     android:fitsSystemWindows="true"
     >
     <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:id="@+id/color"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -21,12 +22,6 @@
         app:expandedTitleTextAppearance="@color/Transparent"
         android:fitsSystemWindows="true"
         >
-        <ImageView
-            android:scaleType="centerCrop"
-            app:layout_collapseMode="parallax"
-            android:contentDescription="Name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -52,6 +47,7 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:overScrollMode="never"
 
         >
         <LinearLayout
@@ -86,6 +82,7 @@
                     android:textColor="@color/Neutral_800"
                     />
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/et_style"
@@ -112,6 +109,7 @@
 
                     />
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/mission"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/et_style"
@@ -137,6 +135,7 @@
                     android:textColor="@color/Neutral_800"
                     />
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/et_style"
@@ -162,6 +161,7 @@
                     android:textColor="@color/Neutral_800"
                     />
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/inn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/et_style"
@@ -188,6 +188,7 @@
 
                     />
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/et_style"
@@ -213,6 +214,7 @@
                     android:textColor="@color/Neutral_800"
                     />
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/et_style"
@@ -230,6 +232,7 @@
 
                 >
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/primary_button_style"
@@ -244,6 +247,7 @@
                     style="?android:attr/borderlessButtonStyle"
                     />
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/primary_button_style"
@@ -266,8 +270,10 @@
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="bottom"
         android:layout_marginStart="32dp"
-        android:backgroundTint="@color/Neutral_100"
         app:fabSize="normal"
+        android:backgroundTint="@color/Neutral_100"
+        android:tint="@color/Neutral_100"
+        app:borderWidth="0dp"
         />
 
 

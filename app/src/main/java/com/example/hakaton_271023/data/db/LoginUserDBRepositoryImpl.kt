@@ -1,6 +1,7 @@
 package com.example.hakaton_271023.data.db
 
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import com.example.hakaton_271023.config.URLs
 import com.example.hakaton_271023.domain.model.LoginUserModel
@@ -18,7 +19,7 @@ class LoginUserDBRepositoryImpl{
     private val url = URLs().loginUserURL
     private val mediaType = "application/json; charset=utf-8".toMediaType()
     @RequiresApi(Build.VERSION_CODES.O)
-    fun request(loginUserModel: LoginUserModel): Boolean{
+    fun request(loginUserModel: LoginUserModel): String?{
 
         val client = OkHttpClient()
         val gson = Gson()
@@ -36,33 +37,15 @@ class LoginUserDBRepositoryImpl{
 
         try{
             client.newCall(request).execute().use { response ->
-                val objectMapper = ObjectMapper()
-                val responseBody = response.body!!.string()
-
-                val stringMap: java.util.HashMap<*, *>? = objectMapper.readValue(
-                    responseBody,
-                    HashMap::class.java
-                )
-                val access_token = stringMap?.get("access_token") as String
-                val refresh_token = stringMap?.get("refresh_token") as String
-                val token_type = stringMap?.get("token_type" )as String
-
-                val token_part =
-                    access_token!!.split("\\.".toRegex()).dropLastWhile { it.isEmpty() }
-                        .toTypedArray()
-                val a = String(Base64.getDecoder().decode(token_part[1]))
-
-                val tokenMap: java.util.HashMap<*, *>? = objectMapper.readValue(
-                    a,
-                    HashMap::class.java
-                )
-                val name_role = tokenMap?.get("sub") as String
-                val role = name_role!!.substring(name_role.indexOf(":") + 1, name_role.length)
-                /////
-                return response.isSuccessful
+                if (response.isSuccessful){
+                    Log.w("errorserver",response.code.toString())
+                    return response.body?.string()
+                }
+                Log.i("errorserver",response.code.toString())
             }
         }catch (e: IOException){
-            return false
+            return null
         }
+        return null
     }
 }

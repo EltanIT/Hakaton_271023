@@ -41,9 +41,18 @@
             android:layout_height="wrap_content"
             android:src="@drawable/close_ic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/names_ll"
+            app:layout_constraintBottom_toTopOf="@id/rv_portals"
             android:layout_marginBottom="16dp"
             android:layout_marginEnd="16dp"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:id="@+id/rv_portals"
+            app:layout_constraintBottom_toTopOf="@id/names_ll"
+            android:scrollbars="none"
+            android:overScrollMode="never"
             />
 
         <LinearLayout
@@ -58,72 +67,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             >
-            <LinearLayout
-                android:layout_weight="1"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/continue_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@id/btn_ll"
-                >
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/portal1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/secondary_button_style"
-                    android:text="Name"
-                    android:textAllCaps="false"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:textAlignment="textStart"
-                    android:paddingHorizontal="12dp"
-                    android:textColor="@color/Primary_700"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/sf_protext_semibold"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/portal2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/secondary_button_style"
-                    android:text="Name"
-                    android:textAllCaps="false"
-                    android:layout_marginTop="32dp"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:textAlignment="textStart"
-                    android:paddingHorizontal="12dp"
-                    android:textColor="@color/Primary_700"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/sf_protext_semibold"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/portal3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/secondary_button_style"
-                    android:text="Name"
-                    android:textAllCaps="false"
-                    android:layout_marginTop="32dp"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:textAlignment="textStart"
-                    android:paddingHorizontal="12dp"
-                    android:textColor="@color/Primary_700"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/sf_protext_semibold"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/continue_btn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/primary_button_style"
-                    android:layout_weight="1"
-                    android:text="Продолжить"
-                    android:textColor="@color/Neutral_0"
-                    android:layout_marginTop="42dp"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:textAllCaps="false"
-                    android:textStyle="bold"
-                    />
-            </LinearLayout>
+                android:background="@drawable/primary_button_style"
+                android:layout_weight="1"
+                android:text="Продолжить"
+                android:textColor="@color/Neutral_0"
+                android:layout_marginTop="42dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:layout_gravity="top"
+                />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,22 +1,11 @@
 package com.example.hakaton_271023.view.activities
 
 import android.os.Bundle
-import android.view.MenuItem
-import android.view.View
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemSelectedListener
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.hakaton_271023.R
 import com.example.hakaton_271023.databinding.ActivityAdminProfileSlideBarBinding
 import com.example.hakaton_271023.view.fragments.AdminHomeFragment
-import com.example.hakaton_271023.view.fragments.AdminProfileFragment
-import com.example.hakaton_271023.view.fragments.admin_drawers_fragments.AdminOurCompanyFragment
-import com.google.android.material.navigation.NavigationBarView
-import com.google.android.material.navigation.NavigationView
-import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
 
 
 class AdminProfileSlideBarActivity : AppCompatActivity(){

@@ -26,11 +26,6 @@
             android:title="Мои обращения"
             android:icon="@drawable/support_ic"
             />
-        <item
-            android:id="@+id/my_requests_common"
-            android:title="Мои заявки"
-            android:icon="@drawable/requests_ic"
-            />
     </group>
 
 </menu>

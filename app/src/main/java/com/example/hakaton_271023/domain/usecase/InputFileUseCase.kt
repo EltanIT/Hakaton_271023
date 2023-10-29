@@ -7,7 +7,7 @@ class InputFileUseCase {
 
     private val inputFileDBRepositoryImpl = InputFileDBRepositoryImpl()
     fun execute(file: File): Boolean {
-        return inputFileDBRepositoryImpl.request(file)
+        return false
     }
 
 }

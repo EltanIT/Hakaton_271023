@@ -1,159 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/Neutral_0"
+    android:scrollbars="none"
+    android:overScrollMode="never"
     tools:context=".view.fragments.admin_drawers_fragments.AdminStudyMaterialsAddFragment">
 
-    <TextView
-        android:id="@+id/txt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Добавление материала"
-        android:fontFamily="@font/sf_protext_bold"
-        android:textSize="20sp"
-        android:textColor="@color/Neutral_800"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <LinearLayout
-        app:layout_constraintTop_toBottomOf="@id/txt1"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="32dp"
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Добавление материала"
+            android:fontFamily="@font/sf_protext_bold"
+            android:textSize="20sp"
+            android:textColor="@color/Primary_700"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
 
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Название"
-                android:fontFamily="@font/sf_protext_semibold"
-                android:textSize="14sp"
-                android:lineHeight="20dp"
-                android:textColor="@color/Neutral_800"
-                />
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/txt1"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/et_style"
-                android:layout_marginTop="12dp"
-                android:padding="16dp"
-                android:hint="Заполните поле"
-                android:textColorHint="@color/Neutral_500"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Описание"
-                android:fontFamily="@font/sf_protext_semibold"
-                android:textSize="14sp"
-                android:lineHeight="20dp"
-                android:textColor="@color/Neutral_800"
-                />
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/description"
+
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Название"
+                    android:fontFamily="@font/sf_protext_semibold"
+                    android:textSize="14sp"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/Neutral_800"
+                    />
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_style"
+                    android:layout_marginTop="12dp"
+                    android:padding="16dp"
+                    android:hint="Заполните поле"
+                    android:textColorHint="@color/Neutral_500"
+                    />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/et_style"
-                android:layout_marginTop="12dp"
-                android:padding="16dp"
-                android:hint="Введите текст"
-                android:textColorHint="@color/Neutral_500"
+                android:layout_marginTop="22dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Описание"
+                    android:fontFamily="@font/sf_protext_semibold"
+                    android:textSize="14sp"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/Neutral_800"
+                    />
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_style"
+                    android:layout_marginTop="12dp"
+                    android:padding="16dp"
+                    android:hint="Введите текст"
+                    android:textColorHint="@color/Neutral_500"
 
-                android:minHeight="100dp"
-                android:maxHeight="200dp"
-                android:gravity="top|start"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ссылка"
-                android:fontFamily="@font/sf_protext_semibold"
-                android:textSize="14sp"
-                android:lineHeight="20dp"
-
-                android:textColor="@color/Neutral_800"
-                />
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/link"
+                    android:minHeight="100dp"
+                    android:maxHeight="200dp"
+                    android:gravity="top|start"
+                    />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/et_style"
-                android:layout_marginTop="12dp"
-                android:padding="16dp"
-                android:hint="Заполните поле"
-                android:textColorHint="@color/Neutral_500"
-                />
+                android:layout_marginTop="22dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ссылка"
+                    android:fontFamily="@font/sf_protext_semibold"
+                    android:textSize="14sp"
+                    android:lineHeight="20dp"
+
+                    android:textColor="@color/Neutral_800"
+                    />
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_style"
+                    android:layout_marginTop="12dp"
+                    android:padding="16dp"
+                    android:hint="Заполните поле"
+                    android:textColorHint="@color/Neutral_500"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top|right"
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Удалить"
+                    android:background="@drawable/exit_btn_style"
+                    android:textColor="@color/Danger_500"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginTop="28dp"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="4dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:fontFamily="@font/sf_protext_bold"
+                    android:textSize="14sp"
+                    android:lineHeight="16dp"
+
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Сохранить"
+                    android:background="@drawable/filter_btn_style"
+                    android:backgroundTint="@color/Primary_600"
+                    android:textColor="@color/Neutral_0"
+                    android:drawableLeft="@drawable/ok_white_ic"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginTop="28dp"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="4dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:fontFamily="@font/sf_protext_bold"
+                    android:textSize="14sp"
+                    android:lineHeight="16dp"
+                    android:layout_marginStart="16dp"
+                    android:drawablePadding="8dp"
+
+                    />
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="top|right"
-            >
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/delete"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="Удалить"
-                android:background="@drawable/exit_btn_style"
-                android:textColor="@color/Danger_500"
-                android:paddingHorizontal="16dp"
-                android:layout_marginTop="28dp"
-                android:textAllCaps="false"
-                android:layout_marginBottom="4dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:fontFamily="@font/sf_protext_bold"
-                android:textSize="14sp"
-                android:lineHeight="16dp"
 
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/save"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="Сохранить"
-                android:background="@drawable/filter_btn_style"
-                android:backgroundTint="@color/Primary_600"
-                android:textColor="@color/Neutral_0"
-                android:drawableLeft="@drawable/ok_white_ic"
-                android:paddingHorizontal="16dp"
-                android:layout_marginTop="28dp"
-                android:textAllCaps="false"
-                android:layout_marginBottom="4dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:fontFamily="@font/sf_protext_bold"
-                android:textSize="14sp"
-                android:lineHeight="16dp"
-                android:layout_marginStart="16dp"
-                android:drawablePadding="8dp"
-
-                />
-        </LinearLayout>
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
